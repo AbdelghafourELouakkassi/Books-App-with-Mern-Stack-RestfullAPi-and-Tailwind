@@ -13,6 +13,8 @@ function AddBook() {
   const [category, setcategory] = useState([]);
   const [image,setimage]=useState(noImageSelected)
   const navigate = useNavigate();
+  const serverUrl=import.meta.env.VITE_SERVER_URL
+
 
   async function CreatBook(e) {
     e.preventDefault();
@@ -26,7 +28,7 @@ function AddBook() {
     formData.append("category",category);
 
     try {
-      const res = await fetch("http://localhost:8000/api/books/CreateBook", {
+      const res = await fetch(`${serverUrl}/api/books/CreateBook`, {
         method: "POST",
         body: formData,
       });

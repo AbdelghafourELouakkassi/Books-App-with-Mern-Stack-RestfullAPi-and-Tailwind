@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { BrowserRouter ,Routes,Route,} from 'react-router-dom'
 import Home from "./component/Home";
@@ -14,7 +15,8 @@ function App() {
   const [books, setBooks] = useState([]);
   const [categorySelected, setCategorySelected] = useState('');
   const [loading,setloading]=useState(true)
-  const BooksUrl="http://localhost:8000/api/books"
+  const serverUrl=import.meta.env.VITE_SERVER_URL
+  const BooksUrl=`${serverUrl}/api/books`
 
  
   useEffect(() => {

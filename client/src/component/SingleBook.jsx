@@ -6,7 +6,8 @@ import { useParams, Link } from "react-router-dom";
 function SingleBook() {
   const [data, setData] = useState([]);
   const useSlug = useParams();
-  const Bookurl = `http://localhost:8000/api/books/${useSlug.slug}`;
+  const serverUrl=import.meta.env.VITE_SERVER_URL
+  const Bookurl = `${serverUrl}/api/books/${useSlug.slug}`;
 
 
 
@@ -47,7 +48,7 @@ function SingleBook() {
             </Link>
           </h4>
           <img
-            src={`http://localhost:8000/upload/${data?.thumbnail}`}
+            src={`${serverUrl}/upload/${data?.thumbnail}`}
             alt={data.title}
             width="300px"
           />

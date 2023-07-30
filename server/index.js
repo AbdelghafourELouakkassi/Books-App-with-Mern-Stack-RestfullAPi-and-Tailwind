@@ -4,14 +4,7 @@ const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 8000;
 const connectDb = require("./connectDb");
-app.use(cors(
-  {
-    origin:["https://mern-stack-api-two.vercel.app/"],
-    methods:["POST" , "GET"],
-    credentials:true
-
-  }
-));
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use("/upload", express.static("upload"));

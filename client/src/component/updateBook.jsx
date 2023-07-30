@@ -6,7 +6,8 @@ import Navbar from "./Navbar";
 
 function UpdateBook() {
   const useslug=useParams()
-  const onebookurl=`http://localhost:8000/api/books/${useslug.slug}`
+  const serverUrl=import.meta.env.VITE_SERVER_URL
+  const onebookurl=`${serverUrl}/api/books/${useslug.slug}`
 
   const [title, settitle] = useState("");
   const [slug, setslug] = useState("");
@@ -58,7 +59,7 @@ function UpdateBook() {
     }
 
     try {
-      const res = await fetch(`http://localhost:8000/api/books/update/${useslug.slug}`, {
+      const res = await fetch(`${serverUrl}/api/books/update/${useslug.slug}`, {
         method: "PUT",
         body: formData,
       });
@@ -130,7 +131,7 @@ function UpdateBook() {
               <div className="my-4 text-center flex flex-col items-center space-y-4">
                 <label>thumbnail: </label>
                   {!image ?
-                  <img src={`http://localhost:8000/upload/${thumbnail}`} alt="no image selected"  width='200px' />
+                  <img src={`${serverUrl}/upload/${thumbnail}`} alt="no image selected"  width='200px' />
                   :<img src={`${image}`} alt="no image selected"  width='200px' />
 
                 }

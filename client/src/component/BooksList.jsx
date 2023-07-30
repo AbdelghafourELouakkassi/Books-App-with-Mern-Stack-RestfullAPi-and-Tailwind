@@ -7,10 +7,12 @@ import { Link, useNavigate } from "react-router-dom";
 function BooksList({ books, setCategorySelected,loading}) {
 
   const navigate=useNavigate();
+  const serverUrl=import.meta.env.VITE_SERVER_URL
+
 
   const DeleteBook=async(id)=>{
     try {
-      const res= await fetch("http://localhost:8000/api/books/"+id,{
+      const res= await fetch(`${serverUrl}/api/books/`+id,{
         method:"DELETE"
       })
 
@@ -55,7 +57,7 @@ function BooksList({ books, setCategorySelected,loading}) {
           {books.map((item) => (
               <div key={item?._id} className="w-72 flex flex-col items-center" >
                   <img
-                    src={`http://localhost:8000/upload/${item?.thumbnail}`}
+                    src={`${serverUrl}/upload/${item?.thumbnail}`}
                     alt={item?.thumbnail}
                     width="250px"
                     className="mb-4 mt-4"
