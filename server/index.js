@@ -12,7 +12,7 @@ const multer  = require('multer')
 
 
 connectDb();
-const Books = require("./models/Books");
+const Books= require("./models/Books");
 
 
 
@@ -82,8 +82,7 @@ app.put("/api/books/update/:slug",upload.single("thumbnail"), async (req, res) =
 
   const { title, slug, description,stars, category } = req.body;
   const slugparam=req.params.slug
-  
-  const updatedBook ={
+  const updateBook ={
     title,
     slug,
     description,
@@ -95,7 +94,7 @@ app.put("/api/books/update/:slug",upload.single("thumbnail"), async (req, res) =
     updateBook.thumbnail=req.file.filename
   }
   try {
-    await Books.updateOne({slug:slugparam},updatedBook);
+    await Books.updateOne({slug:slugparam},updateBook);
     res.json("book updated");
   } catch (error) {
     res.status(500).json({ error: "the book not updated" });

@@ -5,7 +5,7 @@ function Navbar() {
     <>
       <div className="flex flex-col md:flex-row md:justify-between md:p-4 md:shadow-xl md:ps-10">
         <div className="text-center mt-3 md:mt-0 md:ms-36  text-3xl  ">
-          <span className='text-green-500'>M</span><span>E</span><span className='text-blue-500 '>R</span><span className='text-yellow-400  '>N</span> Stack Crud Project
+          MERN Stack Crud Project
         </div>
         <div>
           <ul className="flex flex-col items-center space-y-3  mt-4 md:mt-0 md:flex-row md:space-x-6 md:pe-56 md:space-y-0  ">

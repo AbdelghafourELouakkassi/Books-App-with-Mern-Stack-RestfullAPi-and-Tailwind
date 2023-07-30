@@ -26,7 +26,7 @@ function App() {
         }
         const reponse = await fetch(url);
         if (!reponse.ok) {
-          alert('failed to fetch data')
+          console.log('failed to fetch data')
         }
         const jsondata = await reponse.json();
         setBooks(jsondata);

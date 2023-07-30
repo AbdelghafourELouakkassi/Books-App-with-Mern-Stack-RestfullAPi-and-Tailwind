@@ -53,21 +53,21 @@ function BooksList({ books, setCategorySelected,loading}) {
         {!loading ?
         <div className="flex flex-col items-center md:flex-row gap-12 mt-2 flex-wrap ">
           {books.map((item) => (
-              <div key={item._id} className="w-72 flex flex-col items-center" >
+              <div key={item?._id} className="w-72 flex flex-col items-center" >
                   <img
-                    src={`http://localhost:8000/upload/${item.thumbnail}`}
-                    alt={item.thumbnail}
+                    src={`http://localhost:8000/upload/${item?.thumbnail}`}
+                    alt={item?.thumbnail}
                     width="250px"
                     className="mb-4 mt-4"
                   />
                 <div className='flex space-x-2'>
-                  <Link to={`/books/updateBook/${item.slug}`}>
+                  <Link to={`/books/updateBook/${item?.slug}`}>
                     <button className=" bg-slate-900 text-white rounded-full w-20 py-2">update</button>
                   </Link>
-                  <Link to={`/books/${item.slug}`}>
+                  <Link to={`/books/${item?.slug}`}>
                     <button className=" bg-slate-900 text-white rounded-full w-28 py-2 ">show details</button>
                   </Link>
-                    <button onClick={(e)=>{e.preventDefault(); DeleteBook(item._id)}}  className=" bg-slate-900 text-white rounded-full w-20 py-2 ">delete</button>
+                    <button onClick={(e)=>{e.preventDefault(); DeleteBook(item?._id)}}  className=" bg-slate-900 text-white rounded-full w-20 py-2 ">delete</button>
                 </div>
               </div>
           ))}
