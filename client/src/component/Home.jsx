@@ -2,6 +2,7 @@
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import mern_stack_image from '../assets/images/mern1.png'
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -19,7 +20,7 @@ function Home() {
       </section>
         <div className="flex flex-col ">
           <button className="text-center self-center outline-1 outline rounded-3xl px-4 py-3 bg-slate-900 text-white  mt-10 hover:bg-white hover:text-black">
-            <a href="/books">Visit the Project</a>
+            <Link to="/books">Visit the Project</Link>
           </button>
         </div>
       <Footer/>

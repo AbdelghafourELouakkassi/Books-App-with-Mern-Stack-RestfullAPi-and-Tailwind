@@ -35,7 +35,7 @@ function BooksList({ books, setCategorySelected,loading}) {
       <Navbar/>
       <div className="flex-col m-4 ">
         <div>
-          <a href='/books/AddBook' className="text-sky-500 text-xl">+Add Book</a>
+          <Link to='/books/AddBook' className="text-sky-500 text-xl">+Add Book</Link>
         </div>
         <div className="flex items-center md:justify-center flex-col md:flex-row ">
           <span className="mt-3 mb-4 text-center text-xl">
