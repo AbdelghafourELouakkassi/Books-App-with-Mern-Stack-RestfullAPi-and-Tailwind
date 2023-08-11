@@ -3,7 +3,6 @@ import { useNavigate,useParams } from "react-router-dom";
 import Navbar from "./Navbar";
 
 
-
 function UpdateBook() {
   const useslug=useParams()
   const serverUrl=import.meta.env.VITE_SERVER_URL
