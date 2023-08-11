@@ -9,8 +9,6 @@ import AddBook from "./component/AddBook";
 import UpdateBook from "./component/updateBook";
 
 
-
-
 function App() {
   const [books, setBooks] = useState([]);
   const [categorySelected, setCategorySelected] = useState('');
