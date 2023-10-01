@@ -4,7 +4,9 @@ const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 8000;
 const connectDb = require("./connectDb");
-app.use(cors());
+app.use(cors(
+     origin: 'https://books-app-backend-ten.vercel.app'
+));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use("/upload", express.static("upload"));
