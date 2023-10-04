@@ -5,7 +5,6 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 const connectDb = require("./connectDb");
 app.use(cors( ))
-app.options("", cors(corsConfig))
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use("/upload", express.static("upload"));
