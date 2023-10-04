@@ -4,12 +4,10 @@ const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 8000;
 const connectDb = require("./connectDb");
-const corsConfig = {
-    origin: '',
-    credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE']
-}
-app.use(cors(corsConfig))
+app.use(cors({
+      origin: 'https://books-app-front-git-main-abdelghafourelouakkassi.vercel.app'
+
+} ))
 app.options("", cors(corsConfig))
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
