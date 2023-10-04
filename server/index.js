@@ -4,7 +4,13 @@ const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 8000;
 const connectDb = require("./connectDb");
-app.use(cors());
+const corsConfig = {
+    origin: '',
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE']
+}
+app.use(cors(corsConfig))
+app.options("", cors(corsConfig))
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use("/upload", express.static("upload"));
