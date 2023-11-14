@@ -11,7 +11,7 @@ function Home() {
       <section className="container flex md:flex-row items-center justify-between flex-col-reverse ">
         <div className="text-center leading-7 first-letter:text-4xl mx-20 -mt-7 md:mt-10 flex-1 font-semibold">
         MERN Stack is a Javascript Stack that is used for easier and faster deployment of full-stack web applications. and its comprises of 4 technologies namely: MongoDB, Express, React and Node.js.
-        In this Project of this web site, we will create a basic Books app by Mern Stack , This app will allow us to create Book, show Books list, update Book, and delete a Book from the MongoDB database.
+        In this Project, we will create a basic Books app by Mern Stack , This app will allow us to create Book, show Books list, update Book, and delete a Book from the MongoDB database.
         </div>
         <div className=" flex-1">
           <img src={mern_stack_image} className=" -mt-2 md:mt-5 rounded-2xl  mx-auto " width='600px' alt="MERN STACK IMAGE" />
